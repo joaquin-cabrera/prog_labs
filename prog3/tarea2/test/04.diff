@@ -1,0 +1,25 @@
+1,2c1,21
+< 1>2>3>4>Hay una cronología consistente.
+< 5>Fin.
+---
+> ==640988== Conditional jump or move depends on uninitialised value(s)
+> ==640988==    at 0x4017F4: es_cronologia_consistente(evento*, unsigned int, rep_lista_datos*, rep_lista_datos*) (principal.cpp:289)
+> ==640988==    by 0x401448: main (principal.cpp:181)
+> ==640988== 
+> ==640988== Use of uninitialised value of size 8
+> ==640988==    at 0x40181E: es_cronologia_consistente(evento*, unsigned int, rep_lista_datos*, rep_lista_datos*) (principal.cpp:290)
+> ==640988==    by 0x401448: main (principal.cpp:181)
+> ==640988== 
+> ==640988== Use of uninitialised value of size 8
+> ==640988==    at 0x40183D: es_cronologia_consistente(evento*, unsigned int, rep_lista_datos*, rep_lista_datos*) (principal.cpp:291)
+> ==640988==    by 0x401448: main (principal.cpp:181)
+> ==640988== 
+> 1>2>3>4>ERROR: se retornó una cronología que no es consistente5>Fin.
+> ==640988== 264 (24 direct, 240 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 2
+> ==640988==    at 0x4844FF5: operator new(unsigned long) (vg_replace_malloc.c:422)
+> ==640988==    by 0x401B49: crear_lista() (lista.cpp:41)
+> ==640988==    by 0x402955: vertices(rep_grafo*) (grafo.cpp:103)
+> ==640988==    by 0x403149: crearOrdenTopologico(rep_grafo*) (cronologia_consistente.cpp:19)
+> ==640988==    by 0x4034B4: cronologia_consistente(unsigned int, rep_lista_datos*, rep_lista_datos*) (cronologia_consistente.cpp:84)
+> ==640988==    by 0x401417: main (principal.cpp:175)
+> ==640988== 

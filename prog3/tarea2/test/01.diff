@@ -1,0 +1,17 @@
+1,2c1,13
+< 1>2>3>4>Hay una cronología consistente.
+< 5>Fin.
+---
+> ==650063== Conditional jump or move depends on uninitialised value(s)
+> ==650063==    at 0x4017F4: es_cronologia_consistente(evento*, unsigned int, rep_lista_datos*, rep_lista_datos*) (principal.cpp:289)
+> ==650063==    by 0x401448: main (principal.cpp:181)
+> ==650063== 
+> ==650063== Use of uninitialised value of size 8
+> ==650063==    at 0x40181E: es_cronologia_consistente(evento*, unsigned int, rep_lista_datos*, rep_lista_datos*) (principal.cpp:290)
+> ==650063==    by 0x401448: main (principal.cpp:181)
+> ==650063== 
+> ==650063== Use of uninitialised value of size 8
+> ==650063==    at 0x40183D: es_cronologia_consistente(evento*, unsigned int, rep_lista_datos*, rep_lista_datos*) (principal.cpp:291)
+> ==650063==    by 0x401448: main (principal.cpp:181)
+> ==650063== 
+> 1>2>3>4>ERROR: se retornó una cronología que no es consistente5>Fin.

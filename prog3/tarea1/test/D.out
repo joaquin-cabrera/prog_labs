@@ -1,0 +1,21 @@
+1>2>Cantidad hospitales: 4
+Cupos hospitales: 2 2 3 2 
+Cantidad estudiantes: 10
+Preferencias hospitales
+Preferencias hospital h0: 0 1 2 3 4 5 6 7 8 9 
+Preferencias hospital h1: 0 1 2 3 4 5 6 7 8 9 
+Preferencias hospital h2: 4 3 2 1 0 9 8 7 6 5 
+Preferencias hospital h3: 4 3 2 1 0 9 8 7 6 5 
+Preferencias estudiantes
+Preferencias estudiante e0: 0 1 2 3 
+Preferencias estudiante e1: 3 1 0 2 
+Preferencias estudiante e2: 1 3 2 0 
+Preferencias estudiante e3: 1 2 0 3 
+Preferencias estudiante e4: 2 0 3 1 
+Preferencias estudiante e5: 0 1 2 3 
+Preferencias estudiante e6: 2 0 1 3 
+Preferencias estudiante e7: 1 3 2 0 
+Preferencias estudiante e8: 1 0 2 3 
+Preferencias estudiante e9: 1 0 2 3 
+3>4>(0, 0) (1, 3) (2, 1) (3, 1) (4, 2) (5, 0) (6, libre) (7, 3) (8, 2) (9, 2) 
+5>Fin.

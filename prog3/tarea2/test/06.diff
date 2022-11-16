@@ -1,0 +1,31 @@
+1,2c1,27
+< 1>2>3>4>Hay una cronología consistente.
+< 5>Fin.
+---
+> ==599200== Conditional jump or move depends on uninitialised value(s)
+> ==599200==    at 0x403352: cronologia_consistente(unsigned int, rep_lista_datos*, rep_lista_datos*) (cronologia_consistente.cpp:49)
+> ==599200==    by 0x401417: main (principal.cpp:175)
+> ==599200== 
+> ==599200== Use of uninitialised value of size 8
+> ==599200==    at 0x402B4A: incidentes(unsigned int, rep_grafo*) (grafo.cpp:140)
+> ==599200==    by 0x40337C: cronologia_consistente(unsigned int, rep_lista_datos*, rep_lista_datos*) (cronologia_consistente.cpp:53)
+> ==599200==    by 0x401417: main (principal.cpp:175)
+> ==599200== 
+> ==599200== Invalid read of size 8
+> ==599200==    at 0x402B4A: incidentes(unsigned int, rep_grafo*) (grafo.cpp:140)
+> ==599200==    by 0x40337C: cronologia_consistente(unsigned int, rep_lista_datos*, rep_lista_datos*) (cronologia_consistente.cpp:53)
+> ==599200==    by 0x401417: main (principal.cpp:175)
+> ==599200==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+> ==599200== 
+> ==599200== 
+> ==599200== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+> ==599200==  Access not within mapped region at address 0x8
+> ==599200==    at 0x402B4A: incidentes(unsigned int, rep_grafo*) (grafo.cpp:140)
+> ==599200==    by 0x40337C: cronologia_consistente(unsigned int, rep_lista_datos*, rep_lista_datos*) (cronologia_consistente.cpp:53)
+> ==599200==    by 0x401417: main (principal.cpp:175)
+> ==599200==  If you believe this happened as a result of a stack
+> ==599200==  overflow in your program's main thread (unlikely but
+> ==599200==  possible), you can try to increase the size of the
+> ==599200==  main thread stack using the --main-stacksize= flag.
+> ==599200==  The main thread stack size used in this run was 8388608.
+> timeout: the monitored command dumped core
