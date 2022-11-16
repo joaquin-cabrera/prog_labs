@@ -1,0 +1,34 @@
+==24291== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==24291== 
+==24291== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==24291==  Access not within mapped region at address 0x1FFE801FF8
+==24291== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==24291==    at 0x4027CF: esVaciaCadena(repCadena*) (cadena.cpp:41)
+==24291==    by 0x40290B: esFinalCadena(nodo*, repCadena*) (cadena.cpp:86)
+==24291==    by 0x402888: siguiente(nodo*, repCadena*) (cadena.cpp:69)
+==24291==    by 0x402922: esFinalCadena(nodo*, repCadena*) (cadena.cpp:86)
+==24291==    by 0x402888: siguiente(nodo*, repCadena*) (cadena.cpp:69)
+==24291==    by 0x402922: esFinalCadena(nodo*, repCadena*) (cadena.cpp:86)
+==24291==    by 0x402888: siguiente(nodo*, repCadena*) (cadena.cpp:69)
+==24291==    by 0x402922: esFinalCadena(nodo*, repCadena*) (cadena.cpp:86)
+==24291==    by 0x402888: siguiente(nodo*, repCadena*) (cadena.cpp:69)
+==24291==    by 0x402922: esFinalCadena(nodo*, repCadena*) (cadena.cpp:86)
+==24291==    by 0x402888: siguiente(nodo*, repCadena*) (cadena.cpp:69)
+==24291==    by 0x402922: esFinalCadena(nodo*, repCadena*) (cadena.cpp:86)
+==24291==  If you believe this happened as a result of a stack
+==24291==  overflow in your program's main thread (unlikely but
+==24291==  possible), you can try to increase the size of the
+==24291==  main thread stack using the --main-stacksize= flag.
+==24291==  The main thread stack size used in this run was 8388608.
+==24291== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==24291== 
+==24291== Process terminating with default action of signal 11 (SIGSEGV)
+==24291==  Access not within mapped region at address 0x1FFE801FF8
+==24291== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==24291==    at 0x482E14D: _vgnU_freeres (vg_preloaded.c:59)
+==24291==  If you believe this happened as a result of a stack
+==24291==  overflow in your program's main thread (unlikely but
+==24291==  possible), you can try to increase the size of the
+==24291==  main thread stack using the --main-stacksize= flag.
+==24291==  The main thread stack size used in this run was 8388608.
+timeout: the monitored command dumped core

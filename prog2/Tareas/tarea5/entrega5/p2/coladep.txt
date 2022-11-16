@@ -1,0 +1,184 @@
+#include "../include/colaDePrioridad.h"
+#include "../include/utils.h"
+#include "../include/info.h"
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct repCP *TColaDePrioridad;
+
+struct celda{
+    nat epos;
+    double valor;
+};
+
+struct buck{
+    int elem, vpos;
+};
+
+struct repCP{
+    celda * Parray;
+    buck * Earray;
+    int tope, cap;
+};
+
+
+static void swap(int pos1, int pos2, celda *array){
+    celda aux = array[pos1];
+    array[pos1] = array[pos2];
+    array[pos2] = aux;
+}
+
+static int padre(int i){ 
+    if(i == 0)
+        return -1;
+    else 
+        return (i-1)/2; 
+}
+
+static int izq(int i){ return 2*i + 1; }
+
+static int der(int i){ return 2*i + 2; }
+
+
+TColaDePrioridad crearCP(nat N){
+    TColaDePrioridad cp = new repCP;
+    cp->Earray = new buck[N];
+    cp->Parray = new celda[N];
+    cp->tope = -1;
+    cp->cap = N;
+    nat i = 0;
+    while(i <= N - 1){
+        cp->Earray[i].vpos = -1;
+        cp->Earray[i].elem = -1;
+        i++;
+    }
+    return cp; 
+}
+    
+nat rangoCP(TColaDePrioridad cp){ return cp->cap; }
+
+TColaDePrioridad insertarEnCP(nat elem, double valor, TColaDePrioridad cp){ 
+    cp->tope++;
+    if(cp->tope <=  cp->cap - 1  ){
+
+        cp->Earray[elem+].elem = elem;
+        cp->Earray[elem].vpos = cp->tope;
+
+        cp->Parray[cp->tope].valor = valor;
+        cp->Parray[cp->tope].epos = elem;
+
+        int i = cp->tope;
+
+        while(i != 0 && cp->Parray[i].valor < cp->Parray[padre(i)].valor){
+
+            //intercambiar pos con padre
+            swap(i, padre(i), cp->Parray);
+            i = padre(i);
+            // guardar pos nueva del valor en arrayE 
+            cp->Earray[elem].vpos = i;   
+        }
+    } 
+    return cp;
+}
+
+bool estaVaciaCP(TColaDePrioridad cp){ return cp->tope == -1 ; }
+
+nat prioritario(TColaDePrioridad cp){ 
+    int i = cp->Parray[0].epos;
+    return cp->Earray[i].elem; 
+}
+
+TColaDePrioridad eliminarPrioritario(TColaDePrioridad cp){
+    swap(0, cp->tope, cp->Parray);
+    cp->tope--;
+    cp->Earray[ cp->Parray[0].epos ].elem = -1;
+    cp->Earray[ cp->Parray[0].epos ].vpos = -1;
+
+    if(cp->tope > 0){
+        int i = 0;
+        while(i <= padre(cp->tope) && (cp->Parray[i].valor > cp->Parray[izq(i)].valor || cp->Parray[i].valor > cp->Parray[der(i)].valor)){
+                //intercambiar con el hijo menor
+                if(cp->Parray[izq(i)].valor > cp->Parray[der(i)].valor){
+                    swap(i, der(i), cp->Parray );
+                    i = der(i);
+                } else {
+                    swap(i, izq(i), cp->Parray);
+                    i = izq(i);
+                }
+                
+
+        }
+    }
+    return cp;
+
+
+}
+
+bool estaEnCP(nat elem, TColaDePrioridad cp){  return cp->Earray[elem].elem != -1; }
+
+double prioridad(nat elem, TColaDePrioridad cp){ 
+    int i = cp->Earray[elem].vpos;
+    return cp->Parray[i].valor; 
+}
+
+// static TColaDePrioridad subir(TColaDePrioridad cp, nat elem, double value){
+//     int i = cp->Earray[elem].vpos;
+//     while(i != 0 && cp->Parray[i].valor < cp->Parray[padre(i)].valor){
+//         swap(i, padre(i), cp->Parray);
+//         i = padre(i);
+//         cp->Earray[elem].vpos = i;
+//     }
+//     return cp;
+// }
+
+// static TColaDePrioridad bajar(TColaDePrioridad cp, nat elem, double value){
+
+// }
+
+TColaDePrioridad actualizarEnCP(nat elem, double valor, TColaDePrioridad cp){
+    // int i = cp->Earray[elem].vpos;
+    // if(valor < cp->Parray[i].valor){
+    //     cp->Parray[i].valor = valor;
+    //     cp = subir(cp, elem, valor);   
+    // } else if(valor > cp->Parray[i].valor){
+    //     cp->Parray[i].valor = valor;
+    //     cp = bajar(cp, elem, valor);
+    // }
+    // return cp;
+    
+
+   
+
+    int i = cp->Earray[elem].vpos;
+    cp->Parray[i].valor = valor;
+    if(i != 0 && cp->Parray[i].valor < cp->Parray[padre(i)].valor){
+        while(i != 0 && cp->Parray[i].valor < cp->Parray[padre(i)].valor){
+            swap(i, padre(i), cp->Parray);
+            i = padre(i);
+            cp->Earray[elem].vpos = i;   
+        }
+    }
+    else if (i <= padre(cp->tope) && (cp->Parray[i].valor > cp->Parray[izq(i)].valor || cp->Parray[i].valor > cp->Parray[der(i)].valor)){
+        while((i <= padre(cp->tope)) && (cp->Parray[i].valor > cp->Parray[izq(i)].valor || cp->Parray[i].valor > cp->Parray[der(i)].valor)){
+      
+            if(cp->Parray[izq(i)].valor > cp->Parray[der(i)].valor){
+                swap(i, der(i), cp->Parray);
+                i = der(i);
+            } else{
+                swap(i, izq(i), cp->Parray);
+                i = izq(i);
+            }
+            cp->Earray[elem].vpos = i;   
+        }
+    }
+    return cp;
+
+}
+
+
+void liberarCP(TColaDePrioridad cp){
+    delete [] cp->Earray;
+    delete [] cp->Parray;
+    delete cp;
+}

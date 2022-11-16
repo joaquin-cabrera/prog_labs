@@ -1,0 +1,27 @@
+static bool insertarEnMenores(double cota, TBinario b, TBinario &arbolMenor, bool &comprobar) {
+	if (!esVacioBinario(b)) {
+		if (cota > realInfo(raiz(b))) {
+			arbolMenor = insertarEnBinario(copiaInfo(raiz(b)), arbolMenor);
+			comprobar = true;
+		}
+		if (insertarEnMenores(cota, izquierdo(b), arbolMenor, comprobar) && comprobar && insertarEnMenores(cota, derecho(b), arbolMenor, comprobar) && comprobar) {
+			TInfo mas_grande = mayor(izquierdo(arbolMenor));
+			TInfo raiz_actual = raiz(arbolMenor);
+			arbolMenor->dato = mas_grande;
+			arbolMenor = removerMayor(izquierdo(arbolMenor));
+			arbolMenor = insertarEnBinario(copiaInfo(raiz_actual), arbolMenor);	
+		}
+		if (cota > realInfo(raiz(b)))
+			return true;	
+	}
+	else	
+		comprobar = false;
+		return = false; 
+}
+
+TBinario menores(double cota, TBinario b) {
+	TBinario arbolmenor = crearBinario();
+	bool comprobar = false;
+	insertarEnMenores(cota, b, arbolMenor, comprobar);
+	return arbolMenor;
+}

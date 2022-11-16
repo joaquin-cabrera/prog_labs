@@ -1,0 +1,66 @@
+1,41c1,23
+< 1>#  Implementar esInicioCadena esLocalizador.
+< 2>loc no es incio de cad.
+< 3>loc no es final de cad.
+< 4>Insertado al final.
+< 5>loc no es incio de cad.
+< 6>loc no es final de cad.
+< 7>loc al inicio.
+< 8>loc es incio de cad.
+< 9>loc es final de cad.
+< 10>loc al final.
+< 11>loc es incio de cad.
+< 12>loc es final de cad.
+< 13>Insertado al final.
+< 14>loc es incio de cad.
+< 15>loc no es final de cad.
+< 16>loc al final.
+< 17>loc no es incio de cad.
+< 18>loc es final de cad.
+< 19>Insertado al final.
+< 20>loc no es incio de cad.
+< 21>loc no es final de cad.
+< 22>loc al inicio.
+< 23>loc es incio de cad.
+< 24>loc no es final de cad.
+< 25>loc al anterior.
+< 26>loc no válido.
+< 27>loc al inicio.
+< 28>loc válido.
+< 29>loc es incio de cad.
+< 30>loc no es final de cad.
+< 31>loc al siguiente.
+< 32>loc válido.
+< 33>loc no es incio de cad.
+< 34>loc no es final de cad.
+< 35>loc al siguiente.
+< 36>loc válido.
+< 37>loc no es incio de cad.
+< 38>loc es final de cad.
+< 39>loc al siguiente.
+< 40>loc no válido.
+< 41>Fin.
+---
+> ==24238== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+> ==24238== 
+> ==24238== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+> ==24238==  Access not within mapped region at address 0x1FFE801FF8
+> ==24238== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+> ==24238==    at 0x4028B1: anterior(nodo*, repCadena*) (cadena.cpp:76)
+> ==24238==  If you believe this happened as a result of a stack
+> ==24238==  overflow in your program's main thread (unlikely but
+> ==24238==  possible), you can try to increase the size of the
+> ==24238==  main thread stack using the --main-stacksize= flag.
+> ==24238==  The main thread stack size used in this run was 8388608.
+> ==24238== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+> ==24238== 
+> ==24238== Process terminating with default action of signal 11 (SIGSEGV)
+> ==24238==  Access not within mapped region at address 0x1FFE801FE8
+> ==24238== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+> ==24238==    at 0x482E14D: _vgnU_freeres (vg_preloaded.c:59)
+> ==24238==  If you believe this happened as a result of a stack
+> ==24238==  overflow in your program's main thread (unlikely but
+> ==24238==  possible), you can try to increase the size of the
+> ==24238==  main thread stack using the --main-stacksize= flag.
+> ==24238==  The main thread stack size used in this run was 8388608.
+> timeout: the monitored command dumped core

@@ -1,0 +1,28 @@
+==24223== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==24223== 
+==24223== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==24223==  Access not within mapped region at address 0x1FFE801FF8
+==24223== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==24223==    at 0x40294E: esInicioCadena(nodo*, repCadena*) (cadena.cpp:94)
+==24223==  If you believe this happened as a result of a stack
+==24223==  overflow in your program's main thread (unlikely but
+==24223==  possible), you can try to increase the size of the
+==24223==  main thread stack using the --main-stacksize= flag.
+==24223==  The main thread stack size used in this run was 8388608.
+==24223== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==24223== 
+==24223== Process terminating with default action of signal 11 (SIGSEGV)
+==24223==  Access not within mapped region at address 0x1FFE801FE8
+==24223== Stack overflow in thread #1: can't grow stack to 0x1ffe801000
+==24223==    at 0x482E14D: _vgnU_freeres (vg_preloaded.c:59)
+==24223==  If you believe this happened as a result of a stack
+==24223==  overflow in your program's main thread (unlikely but
+==24223==  possible), you can try to increase the size of the
+==24223==  main thread stack using the --main-stacksize= flag.
+==24223==  The main thread stack size used in this run was 8388608.
+==24223== 200 (120 direct, 80 indirect) bytes in 5 blocks are definitely lost in loss record 5 of 8
+==24223==    at 0x4838E86: operator new(unsigned long) (vg_replace_malloc.c:344)
+==24223==    by 0x4029B5: insertarAlFinal(repInfo*, repCadena*) (cadena.cpp:101)
+==24223==    by 0x401857: main (principal.cpp:203)
+==24223== 
+timeout: the monitored command dumped core
