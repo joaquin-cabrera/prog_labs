@@ -1,0 +1,8 @@
+RESPUESTAS:
+
+2.2.a: Se tuvieron que solucionar las dependencias circulares de A-B, A-C, y B-C
+
+
+
+
+2.2.b: Una forward declaration, se utiliza cuando existe una dependencia circular. Se declara una clase de antemano para poder usarla en la definicion de otra, ya que sino da un error de compilacion. Por ejemplo, si hay una dependencia circular entre una clase A y una clase B, para acceder a B yo tengo que conocer su definicion desde A, pero no podria conocer la definicion si la clase B esta declarada despues. Entonces se pone una forward declaration de B, para que A conozca la definicion de antemano.
