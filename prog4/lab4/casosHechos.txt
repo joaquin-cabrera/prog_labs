@@ -1,0 +1,22 @@
+
+
+
+|  1- Alta de Usuario                    HECHO      
+|  2- Alta de Hostal                     HECHO   
+|  3- Alta de Habitacion                 HECHO
+|  4- Asignar Empleado a Hostal          HECHO
+|  5- Realizar Reserva                   HECHO
+|  6- Consulta top 3 Hostales            HECHO
+|  7- Registrar Estadia                  HECHO 
+|  8- Finalizar Estadia                  HECHO
+|  9- Calificar Estadia                  
+| 10- Comentar Calificacion              HECHO
+| 11- Consulta de Usuario                HECHO     
+| 12- Consulta de Hostal                 HECHO
+| 13- Consulta de Reserva                HECHO
+| 14- Consulta de Estadia                HECHO
+| 15- Baja de Reserva                    HECHO
+| 16- Suscribirse a Notificaciones       jc juan
+| 17- Consulta de Notificaciones         jc juan
+| 18- Eliminar Suscripcion               jc juan
+| 19- Modificar Fecha del Sistema        HECHO
